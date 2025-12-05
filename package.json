@@ -1,0 +1,33 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "embed": "node database/populateDatabase.js",
+    "dev": "nodemon api.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TDtarbo/bag_bot-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TDtarbo/bag_bot-backend/issues"
+  },
+  "homepage": "https://github.com/TDtarbo/bag_bot-backend#readme",
+  "dependencies": {
+    "@ai-sdk/google": "^2.0.44",
+    "@datastax/astra-db-ts": "^2.1.2",
+    "@google/genai": "^1.31.0",
+    "ai": "^5.0.107",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "env": "^0.0.2",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11"
+  }
+}
