@@ -61,21 +61,19 @@ const llmStream = async (messages) => {
     const knowledgeBase = await getKnowledgeBase(input);
     const parsedKnowledgeBase = await Promise.all(
         knowledgeBase.map(async (chunk) => {
-            return await parser.p(chunk.pageContent);
+            return await parser.parse(chunk.pageContent);
         })
     );
 
-    console.log(parsedKnowledgeBase);
-
-    /*     const response = await chain.stream({
+    const response = await chain.stream({
         input: input,
         history: history,
-        knowledgeBase: knowledgeBase,
+        knowledgeBase: parsedKnowledgeBase,
     });
 
     console.log(response);
 
-    return response; */
+    return response;
 };
 
 export default llmStream;
