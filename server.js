@@ -11,7 +11,7 @@ const { PORT } = process.env;
 import dotenv from "dotenv";
 dotenv.config();
 
-import llmStream from "./src/iim.js";
+import llmStream from "./src/llm.js";
 
 app.post("/chat", async (req, res) => {
     const { messages } = req.body;
@@ -25,7 +25,6 @@ app.post("/chat", async (req, res) => {
         const stream = await llmStream(messages);
 
         for await (const chunk of stream) {
-            console.log(chunk);
             res.write(`data: ${JSON.stringify(chunk)}\n\n`);
         }
 
